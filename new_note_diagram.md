@@ -1,7 +1,7 @@
 # 0.4: New note diagram
-## Image of first response
+## Image of first HTML response
 ![first response](./assets/first_response.png)
-## Image of second response
+## Image of second HTML response
 ![second response](./assets/second_response.png)
 
 ## Diagram
@@ -14,7 +14,7 @@ sequenceDiagram
     activate Server
     rect rgba(0, 162, 232, 0.3)
     note right of Client: 1.
-    Server-->>Client: Server sends a 200 HTML response with text/html in response to the GET request.
+    Server-->>Client: Server sends a 200 HTML response with text/html to the GET request.
     deactivate Server
     end
     activate Client
@@ -29,20 +29,20 @@ sequenceDiagram
     rect rgba(163, 73, 164, 0.3)
     note right of Client: 2.
     par
-    Server-->>Client: Server sends a 200 HTML response with text/css in response to the GET request.
+    Server-->>Client: Server sends a 200 HTML response with text/css to the GET request.
     and
-    Server-->>Client: Server sends a 200 HTML response with application/javascript in response to the GET request.
+    Server-->>Client: Server sends a 200 HTML response with application/javascript to the GET request.
     deactivate Server
     end
     end
     activate Client
     note over Client: Client renders the CSS and executes the JavaScript code.
-    Client->>Server: Client sends a GET request to `/data.json`, triggered by the JavaScript code, to fetch the notes JSON.
+    Client->>Server: Client sends a GET request to `/data.json`, triggered by the JavaScript code, to fetch the data JSON.
     deactivate Client
     activate Server
     rect rgba(255, 127, 39, 0.3)
     note right of Client: 3.
-    Server-->>Client: Server sends a 200 HTML response with application/json in response to the GET request.
+    Server-->>Client: Server sends a 200 HTML response with application/json to the GET request.
     deactivate Server
     end
     activate Client
@@ -54,14 +54,14 @@ sequenceDiagram
     rect rgba(237, 28, 36, 0.3)
     note right of Client: 4.
     note over Server: Serves saves the data from the payload.
-    Server-->>Client: Server sends a 302 redirect response in response to the POST request.
+    Server-->>Client: Server sends a 302 redirect response to the POST request.
     deactivate Server
     end
     Client->>Server: Client sends a GET request to `/notes` based on the redirect response.
     activate Server
     rect rgba(0, 162, 232, 0.3)
     note right of Client: 5.
-    Server-->>Client: Server sends a 200 HTML response with text/html in response to the GET request.
+    Server-->>Client: Server sends a 200 HTML response with text/html to the GET request.
     deactivate Server
     end
     activate Client
@@ -76,9 +76,9 @@ sequenceDiagram
     rect rgba(163, 73, 164, 0.3)
     note right of Client: 6.
     par
-    Server-->>Client: Server sends a 200 HTML response with text/css in response to the GET request.
+    Server-->>Client: Server sends a 200 HTML response with text/css to the GET request.
     and
-    Server-->>Client: Server sends a 200 HTML response with application/javascript in response to the GET request.
+    Server-->>Client: Server sends a 200 HTML response with application/javascript to the GET request.
     deactivate Server
     end
     end
@@ -89,7 +89,7 @@ sequenceDiagram
     activate Server
     rect rgba(255, 127, 39, 0.3)
     note right of Client: 7.
-    Server-->>Client: Server sends a 200 HTML response with application/json in response to the GET request.
+    Server-->>Client: Server sends a 200 HTML response with application/json to the GET request.
     deactivate Server
     end
     activate Client
