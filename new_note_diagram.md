@@ -8,7 +8,7 @@
 Diagram request **base URL is `https://studies.cs.helsinki.fi/exampleapp`**.
 ```mermaid
 ---
-title: New note diagram
+title: New note
 ---
 sequenceDiagram
     participant Client
