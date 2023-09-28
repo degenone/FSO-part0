@@ -6,6 +6,9 @@
 ## Diagram
 Diagram request **base URL is `https://studies.cs.helsinki.fi/exampleapp`**.
 ```mermaid
+---
+title: Single page app diagram
+---
 sequenceDiagram
     participant Client
     participant Server
