@@ -20,14 +20,14 @@ sequenceDiagram
     note over Client: Client renders HTML.
     par
     Client-->>Server: Rendering triggers both a GET request for CSS to `/main.css`...
-    and
-    Client-->>Server: ...and a GET request for JavaScript to `/spa.js`.
-    end
     rect rgba(163, 73, 164, 0.3)
     note right of Client: 2.
-    par
     Server-->>Client: Server sends a 200 HTML response with text/css to the GET request.
+    end
     and
+    Client-->>Server: ...and a GET request for JavaScript to `/spa.js`.
+    rect rgba(163, 73, 164, 0.3)
+    note right of Client: 2.
     Server-->>Client: Server sends a 200 HTML response with application/javascript to the GET request.
     end
     end

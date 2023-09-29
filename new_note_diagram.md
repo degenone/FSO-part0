@@ -22,18 +22,18 @@ sequenceDiagram
     end
     activate Client
     Note over Client: Client renders the HTML.
-    par
     deactivate Client
+    par
     Client->>Server: Rendring triggers both a GET request for CSS to `/main.css`...
     activate Server
-    and
-    Client->>Server: ...and a GET request for JavaScript to `/main.js`.
-    end
     rect rgba(163, 73, 164, 0.3)
     note right of Client: 2.
-    par
     Server-->>Client: Server sends a 200 HTML response with text/css to the GET request.
+    end
     and
+    Client->>Server: ...and a GET request for JavaScript to `/main.js`.
+    rect rgba(163, 73, 164, 0.3)
+    note right of Client: 2.
     Server-->>Client: Server sends a 200 HTML response with application/javascript to the GET request.
     deactivate Server
     end
@@ -49,9 +49,9 @@ sequenceDiagram
     deactivate Server
     end
     activate Client
-    note over Client: Client JavaScript renders the json data.
+    note over Client: Client JavaScript renders the JSON data.
     note over Client: Client fills the form.
-    Client->>Server: Client sends a POST request to `new_note` with the form data as payload.
+    Client->>Server: Client sends a POST request to `/new_note` with the form data as payload.
     deactivate Client
     activate Server
     rect rgba(237, 28, 36, 0.3)
@@ -73,14 +73,14 @@ sequenceDiagram
     deactivate Client
     Client->>Server: Rendring triggers both a GET request for CSS to `/main.css`...
     activate Server
-    and
-    Client->>Server: ...and a GET request for JavaScript to `/main.js`.
-    end
     rect rgba(163, 73, 164, 0.3)
     note right of Client: 6.
-    par
     Server-->>Client: Server sends a 200 HTML response with text/css to the GET request.
+    end
     and
+    Client->>Server: ...and a GET request for JavaScript to `/main.js`.
+    rect rgba(163, 73, 164, 0.3)
+    note right of Client: 6.
     Server-->>Client: Server sends a 200 HTML response with application/javascript to the GET request.
     deactivate Server
     end
@@ -96,6 +96,6 @@ sequenceDiagram
     deactivate Server
     end
     activate Client
-    note over Client: Client JavaScript renders the json data with payload data included.
+    note over Client: Client JavaScript renders the JSON data with form data included.
     deactivate Client
 ```
